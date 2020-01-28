@@ -1,6 +1,6 @@
 module.exports =  {
   "setupFilesAfterEnv": [
-    "<rootDir>/setupTests.js"
+    "<rootDir>/testing/setupTests.js"
   ],
   "collectCoverageFrom": [
     "src/**/*.{js,}"
