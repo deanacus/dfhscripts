@@ -1,0 +1,3 @@
+/**
+ * Publish package to npm
+ */
