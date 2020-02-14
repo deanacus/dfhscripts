@@ -4,3 +4,5 @@ dist/
 build/
 out/
 .next/
+dist/,
+esm/,

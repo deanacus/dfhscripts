@@ -8,12 +8,15 @@ const reactPlugins = [
 ];
 
 const extend = () => {
-  const extendArr = ['eslint-config-airbnb'];
+  const extendArr = ['airbnb'];
+
+  // Has to go last to let prettier override any other settings
+  extendArr.push('prettier');
   return extendArr;
 };
 
 const plugins = () => {
-  let pluginArr = ['jest'];
+  let pluginArr = ['jest', 'import'];
   if (hasAnyDep('react')) {
     pluginArr = [...pluginArr, ...reactPlugins];
   }
@@ -26,5 +29,14 @@ module.exports = {
   env: {
     'jest/globals': true,
   },
-  rules: {},
+  parserOptions: {
+    ecmaFeatures: {
+      jsx: true,
+    },
+    ecmaVersion: 2018,
+    sourceType: 'module',
+  },
+  rules: {
+    'react/jsx-one-expression-per-line': 0,
+  },
 };

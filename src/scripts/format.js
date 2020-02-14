@@ -3,7 +3,8 @@ const { hasFile, hasPkgProp, resolveBin } = require('../utils');
 
 const localConfig = require.resolve('../config/prettierrc');
 const localIgnore = require.resolve('../config/prettierignore');
-const userConfig = hasFile('.prettierrc') || hasFile('.prettierrc.js') || hasPkgProp('prettierConfig');
+const userConfig =
+  hasFile('.prettierrc') || hasFile('.prettierrc.js') || hasPkgProp('prettierConfig');
 const userIgnore = hasFile('.prettierignore') || hasPkgProp('prettierIgnore');
 
 const buildArgs = () => {

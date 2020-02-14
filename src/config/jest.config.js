@@ -1,10 +1,6 @@
 const path = require('path');
 const { hasAnyDep, hasFile, hasPkgProp } = require('../utils');
 
-// const here = (p) => path.join(__dirname, p);
-
-// const useBuiltInBabelConfig = !hasFile('.babelrc') && !hasPkgProp('babel');
-
 const ignores = [
   '/node_modules/',
   '/__fixtures__/',
@@ -40,8 +36,8 @@ if (hasFile('setup-env.js')) {
   jestConfig.setupFilesAfterEnv = [path.join(process.cwd(), 'setup-env.js')];
 }
 
-// if (useBuiltInBabelConfig) {
-//   jestConfig.transform = { "^.+\\.js$": here("./babel-transform") };
+// if (!hasFile('.babelrc') && !hasPkgProp('babel')) {
+//   jestConfig.transform = { '^.+\\.js$': path.join(__dirname, './babel-transform') };
 // }
 
 module.exports = jestConfig;
