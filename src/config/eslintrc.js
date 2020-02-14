@@ -23,6 +23,18 @@ const plugins = () => {
   return pluginArr;
 };
 
+const rules = () => {
+  let rulesObj = {};
+  if (hasAnyDep('react')) {
+    rulesObj = {
+      ...rulesObj,
+      'react/jsx-one-expression-per-line': 0,
+    };
+  }
+
+  return rulesObj;
+};
+
 module.exports = {
   extends: extend(),
   plugins: plugins(),
@@ -36,7 +48,5 @@ module.exports = {
     ecmaVersion: 2018,
     sourceType: 'module',
   },
-  rules: {
-    'react/jsx-one-expression-per-line': 0,
-  },
+  rules: rules(),
 };

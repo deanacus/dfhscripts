@@ -2,6 +2,7 @@ const path = require('path');
 const fs = require('fs');
 // eslint-disable-next-line import/no-dynamic-require
 const pkg = require(path.join(process.cwd(), 'package.json'));
+// const pkgUp = require('pkg-up')
 const which = require('which');
 
 const pkgName = pkg.name;

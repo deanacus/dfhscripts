@@ -8,7 +8,7 @@ const userConfig =
 const userIgnore = hasFile('.prettierignore') || hasPkgProp('prettierIgnore');
 
 const buildArgs = () => {
-  const argv = process.argv.slice(3);
+  const argv = process.argv.slice(2);
   const args = [...argv];
   // which config to pass
   if (!userConfig || !argv.includes('--config')) {

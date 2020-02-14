@@ -7,7 +7,7 @@ const userConfig = hasFile('.eslintrc') || hasFile('.eslintrc.js') || hasPkgProp
 const userIgnore = hasFile('.eslintignore') || hasPkgProp('eslintIgnore');
 
 const buildArgs = () => {
-  const argv = process.argv.slice(3);
+  const argv = process.argv.slice(2);
   const args = [...argv];
   // which config to pass
   if (!userConfig || !argv.includes('--config')) {
@@ -19,7 +19,7 @@ const buildArgs = () => {
     args.push('--ignore-path', localIgnore);
   }
 
-  args.push('src/**/*.js');
+  args.push('./src/**/*.js');
 
   return args;
 };

@@ -1,5 +1,5 @@
 const path = require('path');
-const { hasAnyDep, hasFile, hasPkgProp } = require('../utils');
+const { hasAnyDep, hasFile } = require('../utils');
 
 const ignores = [
   '/node_modules/',
