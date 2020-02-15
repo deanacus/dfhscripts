@@ -36,8 +36,4 @@ if (hasFile('setup-env.js')) {
   jestConfig.setupFilesAfterEnv = [path.join(process.cwd(), 'setup-env.js')];
 }
 
-// if (!hasFile('.babelrc') && !hasPkgProp('babel')) {
-//   jestConfig.transform = { '^.+\\.js$': path.join(__dirname, './babel-transform') };
-// }
-
 module.exports = jestConfig;

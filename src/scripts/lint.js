@@ -3,7 +3,14 @@ const { hasFile, hasPkgProp, resolveBin } = require('../utils');
 
 const localConfig = require.resolve('../config/eslintrc');
 const localIgnore = require.resolve('../config/eslintignore');
-const userConfig = hasFile('.eslintrc') || hasFile('.eslintrc.js') || hasPkgProp('eslintConfig');
+const userConfig =
+  hasFile('.eslintrc.js') ||
+  hasFile('.eslintrc.cjs') ||
+  hasFile('.eslintrc.yaml') ||
+  hasFile('.eslintrc.yml') ||
+  hasFile('.eslintrc.json') ||
+  hasFile('.eslintrc') ||
+  hasPkgProp('eslintConfig');
 const userIgnore = hasFile('.eslintignore') || hasPkgProp('eslintIgnore');
 
 const buildArgs = () => {
