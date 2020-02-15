@@ -1,6 +1,6 @@
 {
   "name": "@deanacus/dfhscripts",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A collection of npm/yarn scripts",
   "main": "src/index.js",
   "repository": "git@github.com:deanacus/dfhscripts.git",
