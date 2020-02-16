@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 const path = require('path');
 const spawn = require('cross-spawn');
 const glob = require('glob');
