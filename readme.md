@@ -1,5 +1,7 @@
 <div align="center">
-<h1>dfh-scripts</h1>
+  <h1 style="border-bottom: none;">dfh-scripts</h1>
+  <hr style="width: 60%;" />
+  <p>Common scripts for keeping my projects nice</p>
 </div>
 
 Inspired by [`kcd-scripts`][kcd-scripts] and [`react-scripts`][react-scripts], I
@@ -8,16 +10,32 @@ make it easier to manage things like linting, testing and formatting.
 
 ## Installation
 
-This wil publised to npm as @deanacus/dfhscripts, so using your preferred
-package manager, just install it an away you go. Probably install it as a dev
-dependency.
+This package is distributed via npm so it can be installed with your preferred package manager:
+
+```bash
+npm install --save-dev @deanacus/dfhscripts
+```
+```bash
+yarn add --dev @deanacus/dfhscripts
+```
 
 ## Usage
 
 This is purely a CLI tool, and is designed for you to use in your npm scripts,
 in much the same way `create-react-app` uses [`react-scripts`][react-scripts].
 
-This product uses itself, which might help you see how you could use it.
+It exposes a binary called `dfhscripts` for use in your `package.json`:
+
+```json
+{
+  "scripts": {
+    "lint": "dfhscripts lint",
+    "format": "dfhscripts format",
+    "test": "dfhscripts test",
+    "coverage": "dfhscripts coverage"
+  }
+}
+```
 
 ## Available scripts
 
@@ -42,8 +60,9 @@ Configuration for each script can be completely overridden by providing
 configuration for the underlying package in whatever way that package expects.
 If one of those exists, your configuration will be used instead.
 
-There is no way currently to merge the configs, nor are the configs exposed in
-any way other than digging into the code.
+There is no method for merging configuration. This is something best left up to
+the user - `dfhscripts` exposes its configuration, so that if you would like to
+do this, simple import the relevent config and extend it.
 
 ## Contributions
 
