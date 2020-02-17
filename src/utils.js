@@ -16,21 +16,33 @@ const hasDep = (...depsArr) => {
   return !!depsArr.filter((dep) => Object.keys(deps).includes(dep)).length;
 };
 
+const getDep = (dep) => hasDep([dep]) ? deps[dep] : false;
+
 const hasDevDep = (...depsArr) => {
   return !!depsArr.filter((dep) => Object.keys(devDeps).includes(dep)).length;
 };
+
+const getDevDep = (dep) => hasDevDep([dep]) ? devDeps[dep] : false;
 
 const hasPeerDep = (...depsArr) => {
   return !!depsArr.filter((dep) => Object.keys(peerDeps).includes(dep)).length;
 };
 
+const getPeerDep = (dep) => hasPeerDep([dep]) ? peerDeps[dep] : false;
+
 const hasAnyDep = (...depsArr) => {
   return !!depsArr.filter((dep) => Object.keys(allDeps).includes(dep)).length;
 };
 
+const getAnyDep = (dep) => hasAnyDep([dep]) ? allDeps[dep] : false;
+
 const hasFile = (file) => fs.existsSync(path.join(process.cwd(), file));
 
+const getFile = (file) => hasFile(file) ? require.resolve(path.join(process.cwd(), file)) : false;
+
 const hasPkgProp = (prop) => Object.keys(pkg).includes(prop);
+
+const getPkgProp = (prop) => hasPkgProp(prop) ? pkg[prop] : false;
 
 const isCi = () => false;
 
@@ -68,11 +80,17 @@ function resolveBin(modName, { executable = modName, cwd = process.cwd() } = {})
 module.exports = {
   pkgName,
   hasDep,
+  getDep,
   hasDevDep,
+  getDevDep,
   hasPeerDep,
+  getPeerDep,
   hasAnyDep,
+  getAnyDep,
   hasFile,
+  getFile,
   hasPkgProp,
+  getPkgProp,
   isCi,
   resolveBin,
 };
