@@ -1,6 +1,5 @@
 <div align="center">
-  <h1 style="border-bottom: none;">dfh-scripts</h1>
-  <hr style="width: 60%;" />
+  <h1>dfh-scripts</h1>
   <p>Common scripts for keeping my projects nice</p>
 </div>
 
@@ -79,7 +78,7 @@ other people's code.
 
 ## Acknowledgements
 
-Primarily, [Kent C. Dodds]. His [`kcd-scripts`][kcd-scripts] is pretty much the entire inspiration
+Primarily, [Kent C. Dodds][kcd]. His [`kcd-scripts`][kcd-scripts] is pretty much the entire inspiration
 for this package (and I've definitely borrowed heavily from his package's code), along with
 [`react-scripts`][react-scripts]
 
