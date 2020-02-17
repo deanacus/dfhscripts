@@ -20,7 +20,7 @@ const buildArgs = () => {
     args.unshift('--ignore-path', localIgnore);
   }
 
-  args.push('./src/*');
+  args.push('./src/**/*');
   args.push('--write');
 
   return args;
