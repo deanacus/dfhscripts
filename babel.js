@@ -1,1 +1,1 @@
-require('./src/config/babelrc')
+require('./src/config/babelrc');

@@ -11,7 +11,9 @@ const availableScripts = glob
 
 const runScript = (targetScript) => {
   const scriptPath = require.resolve(path.join(__dirname, 'scripts', targetScript));
-  const result = spawn.sync(nodeExec, [scriptPath, ...args], { stdio: 'inherit' });
+  const result = spawn.sync(nodeExec, [scriptPath, ...args], {
+    stdio: 'inherit',
+  });
 
   process.exit(result.status);
 };

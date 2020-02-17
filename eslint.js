@@ -1,1 +1,1 @@
-require('./src/config/eslintrc')
+require('./src/config/eslintrc');

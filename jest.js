@@ -1,1 +1,1 @@
-require('./src/config/jest.config')
+require('./src/config/jest.config');

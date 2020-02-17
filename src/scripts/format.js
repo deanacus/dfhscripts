@@ -12,15 +12,15 @@ const buildArgs = () => {
   const args = [...argv];
   // which config to pass
   if (!userConfig || !argv.includes('--config')) {
-    args.push('--config', localConfig);
+    args.unshift('--config', localConfig);
   }
 
   // Which ignore file to use
   if (!userIgnore || !argv.includes('--ignore-path')) {
-    args.push('--ignore-path', localIgnore);
+    args.unshift('--ignore-path', localIgnore);
   }
 
-  args.push('src/**/*.js');
+  args.push('./src/*');
   args.push('--write');
 
   return args;
