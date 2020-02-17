@@ -10,21 +10,11 @@
   "bin": {
     "dfhscripts": "bin/cli.js"
   },
-  "files": [
-    "bin",
-    "dist",
-    "babel.js",
-    "eslint.js",
-    "jest.js",
-    "prettier.js"
-  ],
   "scripts": {
     "lint": "node src lint",
     "test": "node src test",
     "format": "node src format",
-    "coverage": "node src coverage",
-    "build": "node src build",
-    "prepublishOnly": "rimraf ./dist && yarn build"
+    "coverage": "node src coverage"
   },
   "dependencies": {
     "@babel/core": "^7.8.4",
