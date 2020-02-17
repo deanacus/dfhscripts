@@ -10,12 +10,21 @@
   "bin": {
     "dfhscripts": "bin/cli.js"
   },
+  "files": [
+    "bin",
+    "dist",
+    "babel.js",
+    "eslint.js",
+    "jest.js",
+    "prettier.js"
+  ],
   "scripts": {
     "lint": "node src lint",
     "test": "node src test",
     "format": "node src format",
     "coverage": "node src coverage",
-    "build": "node src build"
+    "build": "node src build",
+    "prepublishOnly": "rimraf ./dist && yarn build"
   },
   "dependencies": {
     "@babel/core": "^7.8.4",
@@ -38,6 +47,7 @@
     "jest": "^24.9.0",
     "jest-watch-typeahead": "^0.4.2",
     "prettier": "^1.19.1",
+    "rimraf": "^3.0.2",
     "rollup": "^1.31.1",
     "rollup-plugin-babel": "^4.3.3",
     "rollup-plugin-peer-deps-external": "^2.2.2",
