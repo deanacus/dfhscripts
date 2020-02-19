@@ -29,6 +29,7 @@ const rules = () => {
     rulesObj = {
       ...rulesObj,
       'react/jsx-one-expression-per-line': 0,
+      'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
     };
   }
 
@@ -40,12 +41,14 @@ module.exports = {
   plugins: plugins(),
   env: {
     'jest/globals': true,
+    browser: true,
+    node: true,
   },
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
     },
-    ecmaVersion: 2018,
+    ecmaVersion: 9,
     sourceType: 'module',
   },
   rules: rules(),
