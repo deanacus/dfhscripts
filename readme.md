@@ -42,16 +42,15 @@ It exposes a binary called `dfhscripts` for use in your `package.json`:
 
 As it stands, there are 4 available scripts:
 
-- lint - runs eslint
-- test - runs jest in watch mode
-- format - runs prettier
-- coverage - runs jest and collects coverage
-- build - runs a simple rollup config and puts a single file in the dist directory
+- lint: runs eslint
+- test: runs jest in watch mode
+- format: runs prettier
+- coverage: runs jest and collects coverage
+- build: runs a simple rollup config and puts a single file in the dist directory.
 
 Scripts I would like to expand upon:
 
-- build - I'd like to make it smarter to detect what kind of package you're building and build that
-  properly, including bin files or multiple files.
+- build: I'd like to make it smarter to detect what kind of package you're building and build that properly, including bin files or multiple files. I've made a start on the logic for this, but webpack is such a fickle beast that it may be worth requiring users to provide their own config.
 
 Eventually I would like to add scripts for:
 
@@ -62,19 +61,22 @@ Eventually I would like to add scripts for:
 
 ## Configuration
 
-Configuration for each script can be completely overridden by providing configuration for the
-underlying package in whatever way that package expects. If one of those exists, your configuration
-will be used instead.
+There's no method for extending or merging the built in configuration. You can either completely override the config by creating whatever config file the underlying package expects,
+`dfhscripts` will simply use that instead - no other change needed.
 
-There is no method for merging configuration. This is something best left up to the user -
-`dfhscripts` exposes its configuration, so that if you would like to do this, simple import the
-relevent config and extend it.
+If you really want to merge or extend or merge configs the built in configs are exposed, so you can import those into your own config, and go from there:
 
-## Contributions
+```javascript
+import jest from '@deanacus/dfhscripts/jest';
 
-I'd love to have contributions. This is a pretty simple project, and not exactly a lot of difficulty
-coding, so perhaps it would be a good chance for someone to get their feet wet with contributing to
-other people's code.
+module.exports = {
+  // ... your config here
+}
+```
+
+## Contributing
+
+This is a pretty simple project, almost entirely configuration files and some looking for files. It might be a really good way to make your first contribution to someone else's code. If you find something, fork the repo, make your change and raise a PR. Provided it doesn't break my usage, I'll likely accept it.
 
 ## Acknowledgements
 

@@ -43,5 +43,16 @@
     "rollup-plugin-babel": "^4.3.3",
     "rollup-plugin-peer-deps-external": "^2.2.2",
     "which": "^2.0.2"
-  }
+  },
+  "files": [
+    "bin/",
+    "src/config/",
+    "src/scripts/",
+    "src/index.js",
+    "src/utils.js",
+    "babel.js",
+    "eslint.js",
+    "jest.js",
+    "prettier.js"
+  ]
 }

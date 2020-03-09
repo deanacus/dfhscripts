@@ -31,9 +31,9 @@ const buildArgs = () => {
 const buildArguments = buildArgs();
 
 const binary = () => {
-  if (isWebpack) {
-    return resolveBin('webpack');
-  }
+  // if (isWebpack) {
+  //   return resolveBin('webpack');
+  // }
   if (isRollup) {
     return resolveBin('rollup');
   }
