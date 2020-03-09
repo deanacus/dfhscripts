@@ -14,7 +14,8 @@
     "lint": "node src lint",
     "test": "node src test",
     "format": "node src format",
-    "coverage": "node src coverage"
+    "coverage": "node src coverage",
+    "build": "node src build"
   },
   "dependencies": {
     "@babel/core": "^7.8.4",
