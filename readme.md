@@ -7,8 +7,6 @@ Inspired by [`kcd-scripts`][kcd-scripts] and [`react-scripts`][react-scripts], I
 collection of preconfigured scripts to run in my projects to make it easier to manage things like
 linting, testing and formatting.
 
-Currently non-functional on Windows, due to some naïveté on my behalf when building it.
-
 ## Installation
 
 This package is distributed via npm so it can be installed with your preferred package manager:

@@ -1,6 +1,16 @@
 const spawn = require('cross-spawn');
 const { hasAnyDep, hasFile, resolveBin } = require('../utils');
 
+const failedMessage = `
+Sorry, we either couldn't find a build tool, or your build tool is not yet supported.
+
+Currently supported build tools are:
+* Rollup
+* Webpack
+
+If you are using either of these, or want to have your preferred build tool added, please raise an issue on Github https://github.com/deanacus/dfhscripts/issues/new
+`;
+
 const isWebpack = hasAnyDep('webpack');
 const isRollup = hasAnyDep('rollup');
 
@@ -28,20 +38,10 @@ const binary = () => {
     return resolveBin('rollup');
   }
 
-  console.log(`
-    Sorry, we couldn't find a build tool, or your build tool is not yet supported.
+  console.log(failedMessage);
 
-    Currently supported build tools are :
-
-    * Rollup
-    * Webpack
-
-    If you are using either of these, or want to have your preferred build tool added, please
-    raise an issue on Github: https://github.com/deanacus/dfhscripts/issues/new?title=Add+Build+Tool
-  `)
-
-  process.exit(1)
-}
+  process.exit(1);
+};
 
 const result = spawn.sync(binary(), [...buildArguments], { stdio: 'inherit' });
 

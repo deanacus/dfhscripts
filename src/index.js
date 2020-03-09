@@ -5,9 +5,17 @@ const { bold, red } = require('ansi-colors');
 
 const [nodeExec, caller, script, ...args] = process.argv;
 
-const availableScripts = glob
-  .sync(path.join(__dirname, 'scripts', '*'))
-  .map((scr) => scr.replace(path.join(__dirname, 'scripts/'), '').replace('.js', ''));
+const thisDir = path.relative('./', __dirname);
+const scriptsDir = path.join(thisDir, './scripts/');
+
+console.log(thisDir, scriptsDir);
+
+const availableScripts = glob.sync(path.join(scriptsDir, '*')).map((scr) =>
+  path
+    .relative('./', scr)
+    .replace(scriptsDir, '')
+    .replace('.js', ''),
+);
 
 const runScript = (targetScript) => {
   const scriptPath = require.resolve(path.join(__dirname, 'scripts', targetScript));
