@@ -1,11 +1,13 @@
 <div align="center">
-  <h1>dfh-scripts</h1>
+  <h1>📦dfh-scripts</h1>
   <p>Common scripts for keeping my projects nice</p>
 </div>
 
 Inspired by [`kcd-scripts`][kcd-scripts] and [`react-scripts`][react-scripts], I decided to create a
 collection of preconfigured scripts to run in my projects to make it easier to manage things like
 linting, testing and formatting.
+
+Currently non-functional on Windows, due to some naïveté on my behalf when building it.
 
 ## Installation
 
