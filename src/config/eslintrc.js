@@ -24,7 +24,9 @@ const plugins = () => {
 };
 
 const rules = () => {
-  let rulesObj = {};
+  let rulesObj = {
+    'import/prefer-default-export': 0,
+  };
   if (hasAnyDep('react')) {
     rulesObj = {
       ...rulesObj,
