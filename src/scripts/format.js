@@ -1,5 +1,7 @@
 const spawn = require('cross-spawn');
-const { hasFile, hasPkgProp, resolveBin } = require('../utils');
+const { hasFile } = require('../utils/files');
+const { resolveBin } = require('../utils/resolve');
+const { hasPkgProp } = require('../utils/package');
 
 const localConfig = require.resolve('../config/prettierrc');
 const localIgnore = require.resolve('../config/prettierignore');

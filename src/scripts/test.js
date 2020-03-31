@@ -1,4 +1,5 @@
-const { hasPkgProp, hasFile } = require('../utils');
+const { hasFile } = require('../utils/files');
+const { hasPkgProp } = require('../utils/package');
 
 const localConfig = require.resolve('../config/jest.config');
 const userConfig = hasFile('jest.config.js') || hasPkgProp('jest');
