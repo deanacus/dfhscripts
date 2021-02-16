@@ -2,7 +2,7 @@
   "name": "@deanacus/dfhscripts",
   "version": "0.0.13",
   "description": "A collection of npm/yarn scripts",
-  "main": "src/index.js",
+  "main": "index.js",
   "repository": "git@github.com:deanacus/dfhscripts.git",
   "author": "Dean Harris <dean@harris.tc>",
   "license": "MIT",
@@ -18,41 +18,6 @@
     "build": "node src build"
   },
   "dependencies": {
-    "@babel/core": "^7.8.4",
-    "@babel/preset-env": "^7.8.4",
-    "@babel/preset-react": "^7.8.3",
-    "@rollup/plugin-commonjs": "^11.0.2",
-    "@rollup/plugin-node-resolve": "^7.1.1",
-    "ansi-colors": "^4.1.1",
-    "cross-spawn": "^7.0.1",
-    "eslint": "^6.8.0",
-    "eslint-config-airbnb": "^18.0.1",
-    "eslint-config-prettier": "^6.10.0",
-    "eslint-plugin-import": "^2.19.1",
-    "eslint-plugin-jest": "^23.7.0",
-    "eslint-plugin-jsx-a11y": "^6.2.3",
-    "eslint-plugin-react": "^7.17.0",
-    "eslint-plugin-react-app": "^6.1.0",
-    "eslint-plugin-react-hooks": "^2.3.0",
-    "glob": "^7.1.6",
-    "jest": "^24.9.0",
-    "jest-watch-typeahead": "^0.4.2",
-    "prettier": "^1.19.1",
-    "rimraf": "^3.0.2",
-    "rollup": "^1.31.1",
-    "rollup-plugin-babel": "^4.3.3",
-    "rollup-plugin-peer-deps-external": "^2.2.2",
-    "which": "^2.0.2"
-  },
-  "files": [
-    "bin/",
-    "src/config/",
-    "src/scripts/",
-    "src/index.js",
-    "src/utils.js",
-    "babel.js",
-    "eslint.js",
-    "jest.js",
-    "prettier.js"
-  ]
+    "pkg-up": "^3.1.0"
+  }
 }
