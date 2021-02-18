@@ -1,7 +1,7 @@
-const pkgDir = require('pkg-up');
+const pkgUp = require('pkg-up');
 
 const getDeps = async () => {
-  const pkgFile = await pkgDir(process.cwd());
+  const pkgFile = await pkgUp(process.cwd());
   const pkg = require(pkgFile);
   const deps = Object.keys({
     ...(pkg.dependencies ?? {}),
