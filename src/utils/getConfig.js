@@ -1,5 +1,5 @@
 const fs = require('fs');
-const path = require('path');
+const { resolve } = require('path');
 const pkgDir = require('pkg-up');
 
 const configs = {
@@ -34,11 +34,7 @@ const getConfig = async (module) => {
   const possibleConfigs = configs[module];
   const primaryConfig =
     possibleConfigs
-      .map((config) =>
-        fs.existsSync(path.resolve(rootDir, config))
-          ? path.resolve(rootDir, config)
-          : false,
-      )
+      .map((config) => (fs.existsSync(resolve(rootDir, config)) ? resolve(rootDir, config) : false))
       .filter(Boolean)[0] ?? resolve(__dirname, `../config/${module}.js`);
   return primaryConfig;
 };
