@@ -6,10 +6,10 @@ const coverage = async () => {
   const cliArgs = process.argv.slice(3);
   const jestPath = await getBinary('jest');
   const config =
-    getConfig('jest') ?? resolve(__dirname, '../config/jest.config.js');
+    (await getConfig('jest')) ?? resolve(__dirname, '../config/jest.config.js');
 
   const args = ['--coverage', ...cliArgs];
-  if (!config.contains('package.json')) {
+  if (!config.includes('package.json')) {
     args.unshift('--config', config);
   }
 
