@@ -4,9 +4,9 @@ const { getBinary, getConfig } = require('../utils');
 const format = async () => {
   const cliArgs = process.argv.slice(3);
   const prettierPath = await getBinary('prettier');
-  const config = getConfig('prettier');
-  const args = ['--write', ...cliArgs];
-  if (!config.contains('package.json')) {
+  const config = await getConfig('prettier');
+  const args = cliArgs.length ? ['--write', ...cliArgs] : ['--write', './src'];
+  if (!config.includes('package.json')) {
     args.unshift('--config', config);
   }
   return spawn(prettierPath, args);
